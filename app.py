@@ -194,7 +194,7 @@ grammar, structure, and technical accuracy.
             with st.spinner("🤖 Generating your answer..."):
 
                 response = client.models.generate_content(
-                    model="gemini-3.8-flash",
+                    model="gemini-3.5-flash-lite",
                     contents=prompt
                 )
 
@@ -210,10 +210,8 @@ grammar, structure, and technical accuracy.
 
         except Exception as e:
 
-            st.error(
-                "❌ Something went wrong while generating the answer."
-            )
-
+            st.error("❌ The AI service is temporarily unavailable.")
             st.info(
-                "Please check your internet connection and Gemini API configuration."
+                "Please try again after a short while."
+                "Your input and application are working correctly."
             )
